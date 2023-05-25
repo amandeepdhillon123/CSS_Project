@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+       <div id="parallax">
+        <div class="layer bg" data-speed="0.10"></div>
+        <div class="layer overlay" data-speed="-0.30"></div>
+        <div class="layer assassins" data-speed="0.25"></div>
+        <div class="layer bottom" data-speed="0"></div>
+
+       </div>
+      <section>
+        <img src="/image/text.png" alt="">
+        <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Ut blanditiis eum in quis consectetur pariatur, est distinctio optio impedit animi harum corrupti adipisci maxime aperiam aliquam velit vero similique esse consequatur voluptates perferendis! Quidem excepturi ratione dicta cumque libero, perspiciatis voluptate, nobis sunt reprehenderit cupiditate culpa accusamus? Vel amet ad qui eius, eaque labore molestias nobis sequi obcaecati eveniet et doloremque numquam quos quibusdam sint 
+             architecto odio maxime voluptatum fugit. Possimus
+              deserunt quis beatae laborum facere natus, esse 
+            excepturi eum numquam neque sed at minima aliquam, odit dolores aut molestias nulla vel, quas assumenda minus? Possimus, adipisci ea! Ducimus earum quasi eius deserunt sint mollitia illo, culpa molestias autem dolore, quisquam tempora magnam labore dignissimos consequatur in voluptatum. Suscipit distinctio quo iusto aspernatur hic quod laboriosam dolorem aperiam! Est, nulla fugiat. Amet laboriosam facilis, exercitationem veniam facere quod! Minima laborum similique rerum iusto dolorem necessitatibus qui excepturi nesciunt ab nulla aliquam, veritatis repellendus voluptatem ratione totam perferendis magnam harum quaerat labore! Porro, sed consequuntur animi earum dolore iure, dicta iusto a maiores magni, facere quae? Suscipit placeat quo, ducimus expedita non inventore
+             debitis enim quam earum accusamus s
+             apiente adipisci odio? Quo aliquid,
+              soluta consequatur consectetur sit illo corrupti adipisci, non cum a esse consequuntur quae iusto asperiores placeat. Ad ipsum repudiandae temporibus perspiciatis quidem magnam in, fugit repellendus corporis ducimus animi consectetur dolorem architecto beatae impedit reprehenderit saepe pariatur nemo, dolore fugiat veniam vero itaque omnis debitis! Labore commodi, culpa laboriosam nisi soluta neque maxime quo! Officia esse quasi iusto.</p>
+      </section>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+<script>
+    const tl=gsap.timeline({
+        
+        scrollTrigger:{
+            trigger:"#parallax",
+            start:"top top",
+            end:"bottom top",
+            scrub: true
+        }
+
+    })
+
+    gsap.utils.toArray(".layer").forEach(layer =>{
+
+        const speed= layer.dataset.speed
+        const movement=-(layer.offsetHeight * speed)
+
+        tl.to(layer,{y:movement,ease:"none"},0)
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
